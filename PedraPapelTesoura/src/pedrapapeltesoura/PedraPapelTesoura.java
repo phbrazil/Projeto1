@@ -7,7 +7,7 @@ package pedrapapeltesoura;
 
 /**
  *
- * @author paulo.bezerra
+ * @author killuminatti08
  */
 public class PedraPapelTesoura {
 

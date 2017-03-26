@@ -1,4 +1,3 @@
-
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -11,10 +10,8 @@ public class PedraPapelTesoura {
 
         jogadaUser = JOptionPane.showInputDialog("Digite Pedra, Papel, Tesoura");
 
-        //if (jogadaUser != "Tesoura" || jogadaUser != "Pedra" || jogadaUser != "Papel") {
-           // System.out.println("Insira Pedra, Papel ou Tesoura!");
+        if (jogadaUser.equals("Tesoura") || jogadaUser.equals("Pedra") || jogadaUser.equals("Papel")) {
 
-        //} else {
             Random maquina = new Random();
             numero = maquina.nextInt(3) + 1;
 
@@ -27,7 +24,8 @@ public class PedraPapelTesoura {
             }
             System.out.println("Você jogou " + jogadaUser + " e a máquina jogou " + computador);
         }
-
+        else{
+            System.out.println("Insira Pedra, Papel ou Tesoura");
+        }    
     }
-    
-
+}   
