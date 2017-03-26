@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package exercicio15bhaskara;
+package calculadora;
 
 /**
  *
  * @author killuminatti08
  */
-public class Exercicio15Bhaskara {
+public class Calculadora {
 
     /**
      * @param args the command line arguments
