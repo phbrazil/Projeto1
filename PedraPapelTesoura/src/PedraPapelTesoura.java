@@ -23,9 +23,28 @@ public class PedraPapelTesoura {
                 computador = "Tesoura";
             }
             System.out.println("Você jogou " + jogadaUser + " e a máquina jogou " + computador);
+        
+           
+         if(jogadaUser.equals(computador)){
+             System.out.println("Empatou");
+         }
+         else if(jogadaUser.equals("Tesoura") && computador.equals("Pedra")){
+             System.out.println("Perdeu HUEHUE");
+         }    
+         else if(jogadaUser.equals("Pedra") && computador.equals("Papel")){
+             System.out.println("Perdeu HUEHUE");
+         }    
+         else if(jogadaUser.equals("Papel") && computador.equals("Tesoura")){
+             System.out.println("Perdeu HUEHUE");
+         }
+         else{
+             System.out.println("Ganhou");
+             
+         }  
         }
-        else{
+         else{
             System.out.println("Insira Pedra, Papel ou Tesoura");
+         
         }    
     }
 }   
