@@ -6,21 +6,35 @@ public class ParImpar {
 
     public static void main(String[] args) {
 
-        int numero;
+        String jogada, jogadamaquina = null;
 
-        numero = Integer.parseInt(JOptionPane.showInputDialog("Par ou Impar?"));
+        jogada = JOptionPane.showInputDialog("Escreva Par ou Impar?");
 
-        if (numero <= 0 || numero > 2) {
-            System.out.println("Insira entre 1 e 2");
-
-        } else {
-
+        if (jogada.equals("Par") || jogada.equals("Impar")){
+            
             Random maquina = new Random();
             int number;
             number = maquina.nextInt(2) + 1;
+            if(number == 1){
+            jogadamaquina = "Impar";
+            }
+            else if(number ==2){
+            jogadamaquina = "Par";
+            }
+           
+            System.out.println("A jogada foi " + jogada + " contra " + jogadamaquina);
 
-            System.out.println("A jogada foi " + numero + " contra " + number);
+        }
+        if(jogadamaquina.equals("Par") && jogada.equals("Par")){
+            System.out.println("Empatou");
+            
+        }else if(jogadamaquina.equals("Par") && jogada.equals("Impar")){
+            System.out.println("Ganhou HUEHUE");
+        }else if(jogadamaquina.equals("Impar") && jogada.equals("Par")){
+            System.out.println("Perdeu HUEHUE");
 
+
+            
         }
 
     }

@@ -7,7 +7,7 @@ package parimpar;
 
 /**
  *
- * @author paulo.bezerra
+ * @author killuminatti08
  */
 public class ParImpar {
 
