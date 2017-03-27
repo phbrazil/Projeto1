@@ -21,6 +21,7 @@ public class ParImpar {
             else if(number ==2){
             jogadamaquina = "Par";
             }
+            
            
             System.out.println("A jogada foi " + jogada + " contra " + jogadamaquina);
 
@@ -32,7 +33,7 @@ public class ParImpar {
             System.out.println("Ganhou HUEHUE");
         }else if(jogadamaquina.equals("Impar") && jogada.equals("Par")){
             System.out.println("Perdeu HUEHUE");
-
+            
 
             
         }
