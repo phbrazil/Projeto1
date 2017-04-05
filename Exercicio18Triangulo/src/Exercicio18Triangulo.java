@@ -6,9 +6,9 @@ public class Exercicio18Triangulo {
 
     public static void main(String[] args) {
 
-    int[] array = new int[3];
+    Double[] array = new Double[3];
         for(int i=0;i<3;i++){
-             array[i] = Integer.parseInt(JOptionPane.showInputDialog("Insira os 3 números"));
+             array[i] = Double.parseDouble(JOptionPane.showInputDialog("Insira os 3 números"));
 
         }
         
@@ -26,7 +26,7 @@ public class Exercicio18Triangulo {
         if ((A * A) == ((B * B) + (C * C))) {
             System.out.println("Triângulo retangulo");
         }
-        if ((A * A) > ((B * B) + (C * C))) {
+        if ((A * A) > ((B * B) + (C * C)) && A != (B+C)) {
             System.out.println("Triângulo obtusangulo");
         }
         if ((A * A) < ((B * B) + (C * C))) {
@@ -41,4 +41,3 @@ public class Exercicio18Triangulo {
     }
 
 }
-
