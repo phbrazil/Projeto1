@@ -22,6 +22,7 @@ public class Exercicio9CPF {
         digito10 = Integer.parseInt(Long.toString(CPF).substring(9, 10));
         digito11 = Integer.parseInt(Long.toString(CPF).substring(10, 11));
 
+        //PASSO 1
         int multiplo1 = (digito1 * 10);
         int multiplo2 = (digito2 * 9);
         int multiplo3 = (digito3 * 8);
@@ -31,16 +32,20 @@ public class Exercicio9CPF {
         int multiplo7 = (digito7 * 4);
         int multiplo8 = (digito8 * 3);
         int multiplo9 = (digito9 * 2);
-
+        
+        //PASSO 2
         int soma = (multiplo1 + multiplo2 + multiplo3 + multiplo4 + multiplo5 + multiplo6 + multiplo7 + multiplo8 + multiplo9);
-
+        
+        //PASSO 3
         int resto = soma % 11;
-
+        
+        //PASSO 4
         int restomenos11 = (11 - resto);
-
+        
+        //PASSO 5
         if (restomenos11 < 10 && restomenos11 == digito10 || restomenos11 > 10 && restomenos11 == 0) {
 
-            //PASSO 6
+            //PASSO 6 SE 5 FOR TRUE
             int passo6multiplo1 = (digito1 * 11);
             int passo6multiplo2 = (digito2 * 10);
             int passo6multiplo3 = (digito3 * 9);
@@ -52,12 +57,16 @@ public class Exercicio9CPF {
             int passo6multiplo9 = (digito9 * 3);
             int passo6multiplo10 = (digito10 * 2);
 
+            //PASSO 7
             int somapasso6 = (passo6multiplo1 + passo6multiplo2 + passo6multiplo3 + passo6multiplo4 + passo6multiplo5 + passo6multiplo6 + passo6multiplo7 + passo6multiplo8 + passo6multiplo9 + passo6multiplo10);
 
+            //PASSO 8
             int restopasso6 = (somapasso6 % 11);
-
+            
+            //PASSO 9 
             int restopasso6menos11 = (11 - restopasso6);
-
+            
+            //PASSO 10
             if (restopasso6menos11 < 10 && restopasso6menos11 == digito11 || restopasso6menos11 == 0) {
 
                 System.out.println("CPF VÁLIDO");
