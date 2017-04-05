@@ -10,8 +10,6 @@ public class Exercicio9CPF {
 
         CPF = Long.parseLong(JOptionPane.showInputDialog("Insira o CPF"));
 
-        
-
         digito1 = Integer.parseInt(Long.toString(CPF).substring(0, 1));
         digito2 = Integer.parseInt(Long.toString(CPF).substring(1, 2));
         digito3 = Integer.parseInt(Long.toString(CPF).substring(2, 3));
@@ -22,11 +20,55 @@ public class Exercicio9CPF {
         digito8 = Integer.parseInt(Long.toString(CPF).substring(7, 8));
         digito9 = Integer.parseInt(Long.toString(CPF).substring(8, 9));
         digito10 = Integer.parseInt(Long.toString(CPF).substring(9, 10));
-        digito11= Integer.parseInt(Long.toString(CPF).substring(10, 11));
+        digito11 = Integer.parseInt(Long.toString(CPF).substring(10, 11));
 
-        System.out.println(digito1);
-        System.out.println(digito2);
-        System.out.println(digito11);
+        int multiplo1 = (digito1 * 10);
+        int multiplo2 = (digito2 * 9);
+        int multiplo3 = (digito3 * 8);
+        int multiplo4 = (digito4 * 7);
+        int multiplo5 = (digito5 * 6);
+        int multiplo6 = (digito6 * 5);
+        int multiplo7 = (digito7 * 4);
+        int multiplo8 = (digito8 * 3);
+        int multiplo9 = (digito9 * 2);
+
+        int soma = (multiplo1 + multiplo2 + multiplo3 + multiplo4 + multiplo5 + multiplo6 + multiplo7 + multiplo8 + multiplo9);
+
+        int resto = soma % 11;
+
+        int restomenos11 = (11 - resto);
+
+        if (restomenos11 < 10 && restomenos11 == digito10 || restomenos11 > 10 && restomenos11 == 0) {
+
+            //PASSO 6
+            int passo6multiplo1 = (digito1 * 11);
+            int passo6multiplo2 = (digito2 * 10);
+            int passo6multiplo3 = (digito3 * 9);
+            int passo6multiplo4 = (digito4 * 8);
+            int passo6multiplo5 = (digito5 * 7);
+            int passo6multiplo6 = (digito6 * 6);
+            int passo6multiplo7 = (digito7 * 5);
+            int passo6multiplo8 = (digito8 * 4);
+            int passo6multiplo9 = (digito9 * 3);
+            int passo6multiplo10 = (digito10 * 2);
+
+            int somapasso6 = (passo6multiplo1 + passo6multiplo2 + passo6multiplo3 + passo6multiplo4 + passo6multiplo5 + passo6multiplo6 + passo6multiplo7 + passo6multiplo8 + passo6multiplo9 + passo6multiplo10);
+
+            int restopasso6 = (somapasso6 % 11);
+
+            int restopasso6menos11 = (11 - restopasso6);
+
+            if (restopasso6menos11 < 10 && restopasso6menos11 == digito11 || restopasso6menos11 == 0) {
+
+                System.out.println("CPF VÁLIDO");
+            } else {
+
+                System.out.println("CPF INVALIDO");
+            }
+
+        } else {
+            System.out.println("CPF INVALIDO");
+        }
 
     }
 
