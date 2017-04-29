@@ -95,6 +95,7 @@ public class JogoDaVelha2 {
                     boolean posicao8 = posicao.equals("8") && pos8.equals("    ");
                     boolean posicao9 = posicao.equals("9") && pos9.equals("    ");
 
+                    //TENTEI COM SWITCH E IF MAS FICOU BUGADO
                     if (posicao1) {
                         pos1 = jogada;
                         quadradosLivres = quadradosLivres + 1;
@@ -124,13 +125,16 @@ public class JogoDaVelha2 {
                         quadradosLivres = quadradosLivres + 1;
                     } else {
                         JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
-                        posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
+                        //posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
 
                     }
 
 
                 } else {
                     JOptionPane.showMessageDialog(null, "Posicao inválida");
+                vez = !vez;
+                vezSimbolo = !vezSimbolo;
+
                 } 
 
 
