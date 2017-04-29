@@ -6,13 +6,16 @@ public class JogoDaVelha {
 
     public static void main(String[] args) {
 
-        int dialogButton = 0;
-        int dialogResult = 0;
-        int quadradosLivres = 1;
+        
+        int dialogButton = 0; //BOTAO JOGAR NOVAMENTE OU NAO
+        int dialogResult = 0; // RESULTADO DO BOTAO
+        int quadradosLivres = 1; //QUANTIDADE DE JOGADAS 9
+        
+        //ARRAY NO PRINT NA TELA
         String[] print = new String[9];
 
         String pos1 = "    ", pos2 = "    ", pos3 = "    ", pos4 = "    ", pos5 = "    ", pos6 = "    ", pos7 = "    ", pos8 = "    ", pos9 = "    ", jogada = "    ";
-        String posicao;
+        String posicao; //POSICAO QUE O USER DIGITA
         String JogadaUser1 = "", JogadaUser2 = "", QuemJoga = "";
 
         String Jogador1;
@@ -32,9 +35,10 @@ public class JogoDaVelha {
 
         }
 
-        String[] JogadaSelecionada = {"X", "O"};
+        String[] JogadaSelecionada = {"X", "O"}; //COMBOBOX PARA SELECIONAR 
+        //VARIAVEL QUE RECEBE O RESULTADO DO COMBOBOX
         String JogadaUser = (String) JOptionPane.showInputDialog(null, "Choose your destiny...",
-                "Qual o simbolo do Jogador 1", JOptionPane.QUESTION_MESSAGE, null, JogadaSelecionada, JogadaSelecionada[0]);
+        "Qual o simbolo do Jogador 1", JOptionPane.QUESTION_MESSAGE, null, JogadaSelecionada, JogadaSelecionada[0]);
 
         if (JogadaUser.equals("X")) {
             JogadaUser1 = "X";
@@ -43,10 +47,11 @@ public class JogoDaVelha {
             JogadaUser1 = "O";
             JogadaUser2 = "X";
         }
-
+        //BOLEANA PARA INVERTER O SIMBOLO E O JOGADOR A CADA JOGADA
         boolean vez = true;
         boolean vezSimbolo = true;
 
+        //GRAFICO DO JOGO DA VELHA EM ARRAY
         print[0] = "   " + pos1 + "   |   " + pos2 + "   |   " + pos3 + "   ";
         print[1] = "-------|-------|------";
         print[2] = "   " + pos4 + "   |   " + pos5 + "   |   " + pos6 + "   ";
@@ -55,6 +60,7 @@ public class JogoDaVelha {
 
         JOptionPane.showMessageDialog(null, print);
 
+        //LACO DENTRO DE LACO PARA DAR A OPCAO DE JOGAR NOVAMENTE
         do {
 
             while (quadradosLivres <= 9) {
@@ -73,6 +79,7 @@ public class JogoDaVelha {
 
                 posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
 
+                //NAO USEI INT POIS NAO CONSEGUI VALIDAR COM INT CASO O USER NAO DIGITE A POSICAO
                 if (posicao.equals("1") || posicao.equals("2") || posicao.equals("3")
                         || posicao.equals("4") || posicao.equals("5") || posicao.equals("6")
                         || posicao.equals("7") || posicao.equals("8") || posicao.equals("9")) {
@@ -83,7 +90,7 @@ public class JogoDaVelha {
                                 pos1 = jogada;
                                 break;
                             } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nesse buraco");
+                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
                                 posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
                             }
                         case "2":
@@ -91,7 +98,7 @@ public class JogoDaVelha {
                                 pos2 = jogada;
                                 break;
                             } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nesse buraco");
+                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
                                 posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
                             }
                         case "3":
@@ -99,7 +106,7 @@ public class JogoDaVelha {
                                 pos3 = jogada;
                                 break;
                             } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nesse buraco");
+                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
                                 posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
                             }
                         case "4":
@@ -107,7 +114,7 @@ public class JogoDaVelha {
                                 pos4 = jogada;
                                 break;
                             } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nesse buraco");
+                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
                                 posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
                             }
                         case "5":
@@ -115,7 +122,7 @@ public class JogoDaVelha {
                                 pos5 = jogada;
                                 break;
                             } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nesse buraco");
+                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
                                 posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
                             }
                         case "6":
@@ -123,7 +130,7 @@ public class JogoDaVelha {
                                 pos6 = jogada;
                                 break;
                             } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nesse buraco");
+                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
                                 posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
                             }
                         case "7":
@@ -131,7 +138,7 @@ public class JogoDaVelha {
                                 pos7 = jogada;
                                 break;
                             } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nesse buraco");
+                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
                                 posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
                             }
                         case "8":
@@ -139,7 +146,7 @@ public class JogoDaVelha {
                                 pos8 = jogada;
                                 break;
                             } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nesse buraco");
+                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
                                 posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
                             }
                         case "9":
@@ -147,7 +154,7 @@ public class JogoDaVelha {
                                 pos9 = jogada;
                                 break;
                             } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nesse buraco");
+                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
                                 posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
                             }
                             break;
