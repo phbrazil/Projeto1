@@ -215,7 +215,7 @@ public class JogoDaVelha {
                 pos7 = "    ";
                 pos8 = "    ";
                 pos9 = "    ";
-                jogada = "    ";
+                vezSimbolo = !vezSimbolo;
 
             } else {
                 JOptionPane.showMessageDialog(null, "ARREGOOOOUUUUUUU");
