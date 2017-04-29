@@ -126,14 +126,14 @@ public class JogoDaVelha2 {
                     } else {
                         JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
                         //posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
+                    vez = !vez;
+                    vezSimbolo = !vezSimbolo;
 
                     }
 
 
                 } else {
                     JOptionPane.showMessageDialog(null, "Posicao inválida");
-                vez = !vez;
-                vezSimbolo = !vezSimbolo;
 
                 } 
 
