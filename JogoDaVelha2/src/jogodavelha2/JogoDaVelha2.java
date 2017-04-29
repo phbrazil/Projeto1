@@ -1,8 +1,8 @@
-package jogodavelha;
+package jogodavelha2;
 
 import javax.swing.JOptionPane;
 
-public class JogoDaVelha {
+public class JogoDaVelha2 {
 
     public static void main(String[] args) {
 
@@ -85,86 +85,54 @@ public class JogoDaVelha {
                         || posicao.equals("4") || posicao.equals("5") || posicao.equals("6")
                         || posicao.equals("7") || posicao.equals("8") || posicao.equals("9")) {
 
-                    switch (posicao) {
-                        case "1":
-                            if (pos1.equals("    ")) {
-                                pos1 = jogada;
-                                break;
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
-                                posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
-                            }
-                        case "2":
-                            if (pos2.equals("    ")) {
-                                pos2 = jogada;
-                                break;
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
-                                posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
-                            }
-                        case "3":
-                            if (pos3.equals("    ")) {
-                                pos3 = jogada;
-                                break;
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
-                                posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
-                            }
-                        case "4":
-                            if (pos4.equals("    ")) {
-                                pos4 = jogada;
-                                break;
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
-                                posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
-                            }
-                        case "5":
-                            if (pos5.equals("    ")) {
-                                pos5 = jogada;
-                                break;
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
-                                posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
-                            }
-                        case "6":
-                            if (pos6.equals("    ")) {
-                                pos6 = jogada;
-                                break;
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
-                                posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
-                            }
-                        case "7":
-                            if (pos7.equals("    ")) {
-                                pos7 = jogada;
-                                break;
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
-                                posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
-                            }
-                        case "8":
-                            if (pos8.equals("    ")) {
-                                pos8 = jogada;
-                                break;
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
-                                posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
-                            }
-                        case "9":
-                            if (pos9.equals("    ")) {
-                                pos9 = jogada;
-                                break;
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
-                                posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
-                            }
-                            break;
+                    boolean posicao1 = posicao.equals("1") && pos1.equals("    ");
+                    boolean posicao2 = posicao.equals("2") && pos2.equals("    ");
+                    boolean posicao3 = posicao.equals("3") && pos3.equals("    ");
+                    boolean posicao4 = posicao.equals("4") && pos4.equals("    ");
+                    boolean posicao5 = posicao.equals("5") && pos5.equals("    ");
+                    boolean posicao6 = posicao.equals("6") && pos6.equals("    ");
+                    boolean posicao7 = posicao.equals("7") && pos7.equals("    ");
+                    boolean posicao8 = posicao.equals("8") && pos8.equals("    ");
+                    boolean posicao9 = posicao.equals("9") && pos9.equals("    ");
+
+                    if (posicao1) {
+                        pos1 = jogada;
+                        quadradosLivres = quadradosLivres + 1;
+                    } else if (posicao2) {
+                        pos2 = jogada;
+                        quadradosLivres = quadradosLivres + 1;
+                    } else if (posicao3) {
+                        pos3 = jogada;
+                        quadradosLivres = quadradosLivres + 1;
+                    } else if (posicao4) {
+                        pos4 = jogada;
+                        quadradosLivres = quadradosLivres + 1;
+                    } else if (posicao5) {
+                        pos5 = jogada;
+                        quadradosLivres = quadradosLivres + 1;
+                    } else if (posicao6) {
+                        pos6 = jogada;
+                        quadradosLivres = quadradosLivres + 1;
+                    } else if (posicao7) {
+                        pos7 = jogada;
+                        quadradosLivres = quadradosLivres + 1;
+                    } else if (posicao8) {
+                        pos8 = jogada;
+                        quadradosLivres = quadradosLivres + 1;
+                    } else if (posicao9) {
+                        pos9 = jogada;
+                        quadradosLivres = quadradosLivres + 1;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
+                        posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
+
                     }
-                    quadradosLivres = quadradosLivres + 1;
+
 
                 } else {
                     JOptionPane.showMessageDialog(null, "Posicao inválida");
-                }
+                } 
+
 
                 print[0] = "   " + pos1 + "   |   " + pos2 + "   |   " + pos3 + "   ";
                 print[1] = "-------|-------|------";
