@@ -215,6 +215,7 @@ public class JogoDaVelha {
                 pos7 = "    ";
                 pos8 = "    ";
                 pos9 = "    ";
+                vez = !vez;
                 vezSimbolo = !vezSimbolo;
 
             } else {
