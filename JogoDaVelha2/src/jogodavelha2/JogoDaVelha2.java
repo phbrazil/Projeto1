@@ -195,7 +195,6 @@ public class JogoDaVelha2 {
                     break;
                 }
 
-                //System.out.println("Jogada " + quadradosLivres);
             }//SE O CONTADOR CHEGAR EM 10 E BOLEANAS GANHADORES FOREM FALSAS
             if (quadradosLivres == 10 && !ganhadorO && !ganhadorX) {
                 JOptionPane.showMessageDialog(null, "Deu VELHA");
