@@ -101,35 +101,57 @@ public class JogoDaVelha2 {
                     if (posicao1) {
                         pos1 = jogada;
                         quadradosLivres = quadradosLivres + 1;
+                        vez = !vez;
+                        vezSimbolo = !vezSimbolo;
                     } else if (posicao2) {
                         pos2 = jogada;
                         quadradosLivres = quadradosLivres + 1;
+                        vez = !vez;
+                        vezSimbolo = !vezSimbolo;
                     } else if (posicao3) {
                         pos3 = jogada;
                         quadradosLivres = quadradosLivres + 1;
+                        vez = !vez;
+                        vezSimbolo = !vezSimbolo;
+
                     } else if (posicao4) {
                         pos4 = jogada;
                         quadradosLivres = quadradosLivres + 1;
+                        vez = !vez;
+                        vezSimbolo = !vezSimbolo;
+
                     } else if (posicao5) {
                         pos5 = jogada;
                         quadradosLivres = quadradosLivres + 1;
+                        vez = !vez;
+                        vezSimbolo = !vezSimbolo;
+
                     } else if (posicao6) {
                         pos6 = jogada;
                         quadradosLivres = quadradosLivres + 1;
+                        vez = !vez;
+                        vezSimbolo = !vezSimbolo;
+
                     } else if (posicao7) {
                         pos7 = jogada;
                         quadradosLivres = quadradosLivres + 1;
+                        vez = !vez;
+                        vezSimbolo = !vezSimbolo;
+
                     } else if (posicao8) {
                         pos8 = jogada;
                         quadradosLivres = quadradosLivres + 1;
+                        vez = !vez;
+                        vezSimbolo = !vezSimbolo;
+
                     } else if (posicao9) {
                         pos9 = jogada;
                         quadradosLivres = quadradosLivres + 1;
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Já jogaram na posicao "+posicao);
-                        //posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
                         vez = !vez;
                         vezSimbolo = !vezSimbolo;
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Já jogaram na posicao " + posicao);
 
                     }
 
@@ -146,11 +168,8 @@ public class JogoDaVelha2 {
 
                 JOptionPane.showMessageDialog(null, print);
 
-                vez = !vez;
-                vezSimbolo = !vezSimbolo;
-                
                 //BOLEANAS GANHADORES 
-                 ganhadorX = (pos1.equals("X") && pos2.equals("X") && pos3.equals("X")
+                ganhadorX = (pos1.equals("X") && pos2.equals("X") && pos3.equals("X")
                         || pos4.equals("X") && pos5.equals("X") && pos6.equals("X")
                         || pos7.equals("X") && pos8.equals("X") && pos9.equals("X")
                         || pos1.equals("X") && pos5.equals("X") && pos9.equals("X")
@@ -159,7 +178,7 @@ public class JogoDaVelha2 {
                         || pos2.equals("X") && pos5.equals("X") && pos8.equals("X")
                         || pos3.equals("X") && pos6.equals("X") && pos9.equals("X"));
 
-                 ganhadorO = (pos1.equals("O") && pos2.equals("O") && pos3.equals("O")
+                ganhadorO = (pos1.equals("O") && pos2.equals("O") && pos3.equals("O")
                         || pos4.equals("O") && pos5.equals("O") && pos6.equals("O")
                         || pos7.equals("O") && pos8.equals("O") && pos9.equals("O")
                         || pos1.equals("O") && pos5.equals("O") && pos9.equals("O")
@@ -177,18 +196,17 @@ public class JogoDaVelha2 {
                 }
 
                 //System.out.println("Jogada " + quadradosLivres);
-
             }//SE O CONTADOR CHEGAR EM 10 E BOLEANAS GANHADORES FOREM FALSAS
             if (quadradosLivres == 10 && !ganhadorO && !ganhadorX) {
-                    JOptionPane.showMessageDialog(null, "Deu VELHA");
-                   //break;
-                }
+                JOptionPane.showMessageDialog(null, "Deu VELHA");
+                //break;
+            }
 
             //BOTAO PARA JOGAR NOVAMENTE E ALTERAR O DO WHILE 
             JOptionPane.showMessageDialog(null, print);
-            
+
             dialogResult = JOptionPane.showConfirmDialog(null, "Jogar novamente?", QuemJoga + " Ganhou!", dialogButton);
-            
+
             //SE USER ESCOLHER JOGAR NOVAMENTE, VOLTA PARA O TOPO, SENAO O DO WHILE VIRA 1
             if (dialogResult == 0) {
                 quadradosLivres = 1;
