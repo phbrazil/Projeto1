@@ -51,7 +51,7 @@ public class JogoDaVelha2 {
                 JogadaUser2 = "X";
             }
 
-            //BOLEANAS PARA INVERTER O SIMBOLO E O JOGADOR A CADA JOGADA
+            //BOLEANAS PARA INVERTER O SIMBOLO E O JOGADOR A CADA JOGADA E GANHADORES
             boolean vez = true;
             boolean vezSimbolo = true;
             boolean ganhadorX = true;
@@ -126,7 +126,7 @@ public class JogoDaVelha2 {
                         pos9 = jogada;
                         quadradosLivres = quadradosLivres + 1;
                     } else {
-                        JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
+                        JOptionPane.showMessageDialog(null, "Já jogaram na posicao "+posicao);
                         //posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
                         vez = !vez;
                         vezSimbolo = !vezSimbolo;
@@ -148,9 +148,8 @@ public class JogoDaVelha2 {
 
                 vez = !vez;
                 vezSimbolo = !vezSimbolo;
-                System.out.println(quadradosLivres);
                 
-
+                //BOLEANAS GANHADORES 
                  ganhadorX = (pos1.equals("X") && pos2.equals("X") && pos3.equals("X")
                         || pos4.equals("X") && pos5.equals("X") && pos6.equals("X")
                         || pos7.equals("X") && pos8.equals("X") && pos9.equals("X")
@@ -177,9 +176,9 @@ public class JogoDaVelha2 {
                     break;
                 }
 
-                System.out.println("Jogada " + quadradosLivres);
+                //System.out.println("Jogada " + quadradosLivres);
 
-            }
+            }//SE O CONTADOR CHEGAR EM 10 E BOLEANAS GANHADORES FOREM FALSAS
             if (quadradosLivres == 10 && !ganhadorO && !ganhadorX) {
                     JOptionPane.showMessageDialog(null, "Deu VELHA");
                    //break;
@@ -187,7 +186,10 @@ public class JogoDaVelha2 {
 
             //BOTAO PARA JOGAR NOVAMENTE E ALTERAR O DO WHILE 
             JOptionPane.showMessageDialog(null, print);
+            
             dialogResult = JOptionPane.showConfirmDialog(null, "Jogar novamente?", QuemJoga + " Ganhou!", dialogButton);
+            
+            //SE USER ESCOLHER JOGAR NOVAMENTE, VOLTA PARA O TOPO, SENAO O DO WHILE VIRA 1
             if (dialogResult == 0) {
                 quadradosLivres = 1;
                 pos1 = "    ";
