@@ -26,12 +26,12 @@ public class JogoDaVelha2 {
             String Jogador2;
             Jogador2 = JOptionPane.showInputDialog("Digite o Nome o Jogador 2");
 
-            if (Jogador1.equals("")) {
+            if (Jogador1.equals("") || Jogador1.equals(" ") || Jogador1.equals("   ")) {
                 JOptionPane.showMessageDialog(null, "Nome do Jogador 1 inválido");
                 Jogador1 = JOptionPane.showInputDialog("Digite o Nome o Jogador 1");
 
             }
-            if (Jogador2.equals("")) {
+            if (Jogador2.equals("") || Jogador2.equals(" ") || Jogador2.equals("   ")) {
                 JOptionPane.showMessageDialog(null, "Nome do Jogador 2 inválido");
                 Jogador2 = JOptionPane.showInputDialog("Digite o Nome o Jogador 2");
 
@@ -54,6 +54,8 @@ public class JogoDaVelha2 {
             //BOLEANAS PARA INVERTER O SIMBOLO E O JOGADOR A CADA JOGADA
             boolean vez = true;
             boolean vezSimbolo = true;
+            boolean ganhadorX = true;
+            boolean ganhadorO = true;
 
             //GRAFICO DO JOGO DA VELHA EM ARRAY
             print[0] = "   " + pos1 + "   |   " + pos2 + "   |   " + pos3 + "   ";
@@ -126,17 +128,15 @@ public class JogoDaVelha2 {
                     } else {
                         JOptionPane.showMessageDialog(null, "Já jogaram nessa posicao ");
                         //posicao = JOptionPane.showInputDialog(QuemJoga + " Digite a posicao de 1 a 9");
-                    vez = !vez;
-                    vezSimbolo = !vezSimbolo;
+                        vez = !vez;
+                        vezSimbolo = !vezSimbolo;
 
                     }
-
 
                 } else {
                     JOptionPane.showMessageDialog(null, "Posicao inválida");
 
-                } 
-
+                }
 
                 print[0] = "   " + pos1 + "   |   " + pos2 + "   |   " + pos3 + "   ";
                 print[1] = "-------|-------|------";
@@ -148,43 +148,46 @@ public class JogoDaVelha2 {
 
                 vez = !vez;
                 vezSimbolo = !vezSimbolo;
+                System.out.println(quadradosLivres);
+                
 
-                if (quadradosLivres == 10) {
-                    JOptionPane.showMessageDialog(null, "Deu VELHA");
-                    break;
-                }
-
-                if (pos1.equals("X") && pos2.equals("X") && pos3.equals("X")
+                 ganhadorX = (pos1.equals("X") && pos2.equals("X") && pos3.equals("X")
                         || pos4.equals("X") && pos5.equals("X") && pos6.equals("X")
                         || pos7.equals("X") && pos8.equals("X") && pos9.equals("X")
                         || pos1.equals("X") && pos5.equals("X") && pos9.equals("X")
                         || pos3.equals("X") && pos5.equals("X") && pos7.equals("X")
                         || pos1.equals("X") && pos4.equals("X") && pos7.equals("X")
                         || pos2.equals("X") && pos5.equals("X") && pos8.equals("X")
-                        || pos3.equals("X") && pos6.equals("X") && pos9.equals("X")) {
+                        || pos3.equals("X") && pos6.equals("X") && pos9.equals("X"));
 
-                    JOptionPane.showMessageDialog(null, QuemJoga + " GANHOOOOOOU ");
-                    break;
-                } else if (pos1.equals("O") && pos2.equals("O") && pos3.equals("O")
+                 ganhadorO = (pos1.equals("O") && pos2.equals("O") && pos3.equals("O")
                         || pos4.equals("O") && pos5.equals("O") && pos6.equals("O")
                         || pos7.equals("O") && pos8.equals("O") && pos9.equals("O")
                         || pos1.equals("O") && pos5.equals("O") && pos9.equals("O")
                         || pos3.equals("O") && pos5.equals("O") && pos7.equals("O")
                         || pos1.equals("O") && pos4.equals("O") && pos7.equals("O")
                         || pos2.equals("O") && pos5.equals("O") && pos8.equals("O")
-                        || pos3.equals("O") && pos6.equals("O") && pos9.equals("O")) {
+                        || pos3.equals("O") && pos6.equals("O") && pos9.equals("O"));
+
+                if (ganhadorX) {
                     JOptionPane.showMessageDialog(null, QuemJoga + " GANHOOOOOOU ");
                     break;
-
+                } else if (ganhadorO) {
+                    JOptionPane.showMessageDialog(null, QuemJoga + " GANHOOOOOOU ");
+                    break;
                 }
 
                 System.out.println("Jogada " + quadradosLivres);
 
             }
+            if (quadradosLivres == 10 && !ganhadorO && !ganhadorX) {
+                    JOptionPane.showMessageDialog(null, "Deu VELHA");
+                   //break;
+                }
 
             //BOTAO PARA JOGAR NOVAMENTE E ALTERAR O DO WHILE 
             JOptionPane.showMessageDialog(null, print);
-            dialogResult = JOptionPane.showConfirmDialog(null, "Jogar novamente?", "Warning", dialogButton);
+            dialogResult = JOptionPane.showConfirmDialog(null, "Jogar novamente?", QuemJoga + " Ganhou!", dialogButton);
             if (dialogResult == 0) {
                 quadradosLivres = 1;
                 pos1 = "    ";
