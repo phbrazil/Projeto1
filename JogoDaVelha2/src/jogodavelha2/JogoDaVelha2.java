@@ -10,62 +10,59 @@ public class JogoDaVelha2 {
         int dialogResult = 0; // RESULTADO DO BOTAO
         int quadradosLivres = 1; //QUANTIDADE DE JOGADAS 9
 
+        //ARRAY NO PRINT NA TELA
+        String[] print = new String[9];
+
+        String pos1 = "    ", pos2 = "    ", pos3 = "    ", pos4 = "    ", pos5 = "    ", pos6 = "    ", pos7 = "    ", pos8 = "    ", pos9 = "    ", jogada = "    ";
+        String posicao; //POSICAO QUE O USER DIGITA
+        String JogadaUser1 = "", JogadaUser2 = "", QuemJoga = "";
+
+        String Jogador1;
+        Jogador1 = JOptionPane.showInputDialog("Digite o Nome o Jogador 1");
+
+        String Jogador2;
+        Jogador2 = JOptionPane.showInputDialog("Digite o Nome o Jogador 2");
+
+        if (Jogador1.equals("") || Jogador1.equals(" ") || Jogador1.equals("   ")) {
+            JOptionPane.showMessageDialog(null, "Nome do Jogador 1 inválido");
+            Jogador1 = JOptionPane.showInputDialog("Digite o Nome o Jogador 1");
+        }
+        if (Jogador2.equals("") || Jogador2.equals(" ") || Jogador2.equals("   ")) {
+            JOptionPane.showMessageDialog(null, "Nome do Jogador 2 inválido");
+            Jogador2 = JOptionPane.showInputDialog("Digite o Nome o Jogador 2");
+        }
+
+        String[] JogadaSelecionada = {"X", "O"}; //COMBOBOX PARA SELECIONAR 
+
+        //VARIAVEL QUE RECEBE O RESULTADO DO COMBOBOX
+        String JogadaUser = (String) JOptionPane.showInputDialog(null, "Choose your destiny...",
+                "Qual o simbolo do Jogador 1", JOptionPane.QUESTION_MESSAGE, null, JogadaSelecionada, JogadaSelecionada[0]);
+
+        if (JogadaUser.equals("X")) {
+            JogadaUser1 = "X";
+            JogadaUser2 = "O";
+        } else if (JogadaUser.equals("O")) {
+            JogadaUser1 = "O";
+            JogadaUser2 = "X";
+        }
+
+        //BOLEANAS PARA INVERTER O SIMBOLO E O JOGADOR A CADA JOGADA E GANHADORES
+        boolean vez = true;
+        boolean vezSimbolo = true;
+        boolean ganhadorX = true;
+        boolean ganhadorO = true;
+
+        //GRAFICO DO JOGO DA VELHA EM ARRAY
+        print[0] = "   " + pos1 + "   |   " + pos2 + "   |   " + pos3 + "   ";
+        print[1] = "-------|-------|------";
+        print[2] = "   " + pos4 + "   |   " + pos5 + "   |   " + pos6 + "   ";
+        print[3] = "-------|-------|------";
+        print[4] = "   " + pos7 + "   |   " + pos8 + "   |   " + pos9 + "   ";
+
+        JOptionPane.showMessageDialog(null, print);
+
         //LACO DENTRO DE LACO PARA DAR A OPCAO DE JOGAR NOVAMENTE
         do {
-
-            //ARRAY NO PRINT NA TELA
-            String[] print = new String[9];
-
-            String pos1 = "    ", pos2 = "    ", pos3 = "    ", pos4 = "    ", pos5 = "    ", pos6 = "    ", pos7 = "    ", pos8 = "    ", pos9 = "    ", jogada = "    ";
-            String posicao; //POSICAO QUE O USER DIGITA
-            String JogadaUser1 = "", JogadaUser2 = "", QuemJoga = "";
-
-            String Jogador1;
-            Jogador1 = JOptionPane.showInputDialog("Digite o Nome o Jogador 1");
-
-            String Jogador2;
-            Jogador2 = JOptionPane.showInputDialog("Digite o Nome o Jogador 2");
-
-            if (Jogador1.equals("") || Jogador1.equals(" ") || Jogador1.equals("   ")) {
-                JOptionPane.showMessageDialog(null, "Nome do Jogador 1 inválido");
-                Jogador1 = JOptionPane.showInputDialog("Digite o Nome o Jogador 1");
-
-            }
-            if (Jogador2.equals("") || Jogador2.equals(" ") || Jogador2.equals("   ")) {
-                JOptionPane.showMessageDialog(null, "Nome do Jogador 2 inválido");
-                Jogador2 = JOptionPane.showInputDialog("Digite o Nome o Jogador 2");
-
-            }
-
-            String[] JogadaSelecionada = {"X", "O"}; //COMBOBOX PARA SELECIONAR 
-
-            //VARIAVEL QUE RECEBE O RESULTADO DO COMBOBOX
-            String JogadaUser = (String) JOptionPane.showInputDialog(null, "Choose your destiny...",
-                    "Qual o simbolo do Jogador 1", JOptionPane.QUESTION_MESSAGE, null, JogadaSelecionada, JogadaSelecionada[0]);
-
-            if (JogadaUser.equals("X")) {
-                JogadaUser1 = "X";
-                JogadaUser2 = "O";
-            } else if (JogadaUser.equals("O")) {
-                JogadaUser1 = "O";
-                JogadaUser2 = "X";
-            }
-
-            //BOLEANAS PARA INVERTER O SIMBOLO E O JOGADOR A CADA JOGADA E GANHADORES
-            boolean vez = true;
-            boolean vezSimbolo = true;
-            boolean ganhadorX = true;
-            boolean ganhadorO = true;
-
-            //GRAFICO DO JOGO DA VELHA EM ARRAY
-            print[0] = "   " + pos1 + "   |   " + pos2 + "   |   " + pos3 + "   ";
-            print[1] = "-------|-------|------";
-            print[2] = "   " + pos4 + "   |   " + pos5 + "   |   " + pos6 + "   ";
-            print[3] = "-------|-------|------";
-            print[4] = "   " + pos7 + "   |   " + pos8 + "   |   " + pos9 + "   ";
-
-            JOptionPane.showMessageDialog(null, print);
-
             while (quadradosLivres <= 9) {
 
                 if (vez) {
@@ -113,53 +110,43 @@ public class JogoDaVelha2 {
                         quadradosLivres = quadradosLivres + 1;
                         vez = !vez;
                         vezSimbolo = !vezSimbolo;
-
                     } else if (posicao4) {
                         pos4 = jogada;
                         quadradosLivres = quadradosLivres + 1;
                         vez = !vez;
                         vezSimbolo = !vezSimbolo;
-
                     } else if (posicao5) {
                         pos5 = jogada;
                         quadradosLivres = quadradosLivres + 1;
                         vez = !vez;
                         vezSimbolo = !vezSimbolo;
-
                     } else if (posicao6) {
                         pos6 = jogada;
                         quadradosLivres = quadradosLivres + 1;
                         vez = !vez;
                         vezSimbolo = !vezSimbolo;
-
                     } else if (posicao7) {
                         pos7 = jogada;
                         quadradosLivres = quadradosLivres + 1;
                         vez = !vez;
                         vezSimbolo = !vezSimbolo;
-
                     } else if (posicao8) {
                         pos8 = jogada;
                         quadradosLivres = quadradosLivres + 1;
                         vez = !vez;
                         vezSimbolo = !vezSimbolo;
-
                     } else if (posicao9) {
                         pos9 = jogada;
                         quadradosLivres = quadradosLivres + 1;
                         vez = !vez;
                         vezSimbolo = !vezSimbolo;
-
                     } else {
                         JOptionPane.showMessageDialog(null, "Já jogaram na posicao " + posicao);
-
                     }
-
                 } else {
                     JOptionPane.showMessageDialog(null, "Posicao inválida");
 
                 }
-
                 print[0] = "   " + pos1 + "   |   " + pos2 + "   |   " + pos3 + "   ";
                 print[1] = "-------|-------|------";
                 print[2] = "   " + pos4 + "   |   " + pos5 + "   |   " + pos6 + "   ";
