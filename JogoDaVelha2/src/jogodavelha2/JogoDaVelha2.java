@@ -1,3 +1,6 @@
+//Developed by Paulo Bezerra and Lucas Medeiros
+//PI PRIMEIRO SEMESTRE 2017
+
 package jogodavelha2;
 
 import javax.swing.JOptionPane;
@@ -31,8 +34,9 @@ public class JogoDaVelha2 {
             JOptionPane.showMessageDialog(null, "Nome do Jogador 2 inválido");
             Jogador2 = JOptionPane.showInputDialog("Digite o Nome o Jogador 2");
         }
-
-        String[] JogadaSelecionada = {"X", "O"}; //COMBOBOX PARA SELECIONAR 
+        
+        //COMBOBOX PARA SELECIONAR
+        String[] JogadaSelecionada = {"X", "O"};  
 
         //VARIAVEL QUE RECEBE O RESULTADO DO COMBOBOX
         String JogadaUser = (String) JOptionPane.showInputDialog(null, "Choose your destiny...",
@@ -52,17 +56,23 @@ public class JogoDaVelha2 {
         boolean ganhadorX = true;
         boolean ganhadorO = true;
 
+        String[] printEx = new String[9];
         //GRAFICO DO JOGO DA VELHA EM ARRAY
-        print[0] = "   " + pos1 + "   |   " + pos2 + "   |   " + pos3 + "   ";
-        print[1] = "-------|-------|------";
-        print[2] = "   " + pos4 + "   |   " + pos5 + "   |   " + pos6 + "   ";
-        print[3] = "-------|-------|------";
-        print[4] = "   " + pos7 + "   |   " + pos8 + "   |   " + pos9 + "   ";
-
-        JOptionPane.showMessageDialog(null, print);
+        
+        printEx[0] = "Cada quadrado representa";
+        printEx[1] = "um número:";
+        printEx[2] = "   1   |   2   |   3  ";
+        printEx[3] = "-------|-------|------";
+        printEx[4] = "   4   |   5   |   6  ";
+        printEx[5] = "-------|-------|------";
+        printEx[6] = "   7   |   8   |   9  ";
+        
+        JOptionPane.showMessageDialog(null, printEx);
+        
 
         //LACO DENTRO DE LACO PARA DAR A OPCAO DE JOGAR NOVAMENTE
         do {
+            
             while (quadradosLivres <= 9) {
 
                 if (vez) {
@@ -147,6 +157,7 @@ public class JogoDaVelha2 {
                     JOptionPane.showMessageDialog(null, "Posicao inválida");
 
                 }
+                
                 print[0] = "   " + pos1 + "   |   " + pos2 + "   |   " + pos3 + "   ";
                 print[1] = "-------|-------|------";
                 print[2] = "   " + pos4 + "   |   " + pos5 + "   |   " + pos6 + "   ";
@@ -154,7 +165,7 @@ public class JogoDaVelha2 {
                 print[4] = "   " + pos7 + "   |   " + pos8 + "   |   " + pos9 + "   ";
 
                 JOptionPane.showMessageDialog(null, print);
-
+               
                 //BOLEANAS GANHADORES 
                 ganhadorX = (pos1.equals("X") && pos2.equals("X") && pos3.equals("X")
                         || pos4.equals("X") && pos5.equals("X") && pos6.equals("X")
@@ -185,7 +196,6 @@ public class JogoDaVelha2 {
             }//SE O CONTADOR CHEGAR EM 10 E BOLEANAS GANHADORES FOREM FALSAS
             if (quadradosLivres == 10 && !ganhadorO && !ganhadorX) {
                 JOptionPane.showMessageDialog(null, "Deu VELHA");
-                //break;
             }
 
             //BOTAO PARA JOGAR NOVAMENTE E ALTERAR O DO WHILE 
