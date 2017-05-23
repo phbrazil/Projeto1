@@ -56,7 +56,7 @@ public class TelaInicial extends javax.swing.JFrame {
     static int MaoMesaoutracarta = 0;
     static boolean fimJogo = true;
 
-    static boolean iniciarjogo = false;
+    static boolean iniciarjogo = true;
     
     static boolean outracarta = false;
 
@@ -97,17 +97,17 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1Valor1 = new javax.swing.JTextField();
-        jTextField2Valor2 = new javax.swing.JTextField();
-        jButtonSoma = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Carta1 = new javax.swing.JTextField();
+        Carta2 = new javax.swing.JTextField();
+        BotaoOutraCarta = new javax.swing.JButton();
+        BotaoPassar = new javax.swing.JButton();
         jLabel4Resultado = new javax.swing.JLabel();
-        jTextField1Resultado = new javax.swing.JTextField();
+        Carta3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        Carta4 = new javax.swing.JTextField();
+        Carta5 = new javax.swing.JTextField();
+        PainelDeInfo = new javax.swing.JTextField();
         BotaoIniciar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -128,48 +128,48 @@ public class TelaInicial extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(187, 100, 50, 14);
 
-        jTextField1Valor1.addActionListener(new java.awt.event.ActionListener() {
+        Carta1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1Valor1ActionPerformed(evt);
+                Carta1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1Valor1);
-        jTextField1Valor1.setBounds(27, 142, 98, 134);
+        getContentPane().add(Carta1);
+        Carta1.setBounds(27, 142, 98, 134);
 
-        jTextField2Valor2.addActionListener(new java.awt.event.ActionListener() {
+        Carta2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2Valor2ActionPerformed(evt);
+                Carta2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2Valor2);
-        jTextField2Valor2.setBounds(164, 142, 104, 134);
+        getContentPane().add(Carta2);
+        Carta2.setBounds(164, 142, 104, 134);
 
-        jButtonSoma.setText("Outra Carta");
-        jButtonSoma.addActionListener(new java.awt.event.ActionListener() {
+        BotaoOutraCarta.setText("Outra Carta");
+        BotaoOutraCarta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSomaActionPerformed(evt);
+                BotaoOutraCartaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSoma);
-        jButtonSoma.setBounds(390, 440, 100, 23);
+        getContentPane().add(BotaoOutraCarta);
+        BotaoOutraCarta.setBounds(390, 440, 100, 29);
 
-        jButton2.setText("Passar");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(270, 440, 90, 23);
+        BotaoPassar.setText("Passar");
+        getContentPane().add(BotaoPassar);
+        BotaoPassar.setBounds(270, 440, 90, 29);
 
         jLabel4Resultado.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4Resultado.setText("Carta 3");
         getContentPane().add(jLabel4Resultado);
         jLabel4Resultado.setBounds(350, 100, 50, 14);
 
-        jTextField1Resultado.setText("0");
-        jTextField1Resultado.addActionListener(new java.awt.event.ActionListener() {
+        Carta3.setText("0");
+        Carta3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ResultadoActionPerformed(evt);
+                Carta3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1Resultado);
-        jTextField1Resultado.setBounds(320, 142, 103, 134);
+        getContentPane().add(Carta3);
+        Carta3.setBounds(320, 142, 103, 134);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("Carta 4");
@@ -180,18 +180,18 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel5.setText("Carta 5");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(640, 100, 50, 14);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(478, 142, 108, 134);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(614, 142, 107, 134);
+        getContentPane().add(Carta4);
+        Carta4.setBounds(478, 142, 108, 134);
+        getContentPane().add(Carta5);
+        Carta5.setBounds(614, 142, 107, 134);
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        PainelDeInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                PainelDeInfoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(280, 290, 200, 50);
+        getContentPane().add(PainelDeInfo);
+        PainelDeInfo.setBounds(280, 290, 200, 50);
 
         BotaoIniciar.setText("Iniciar");
         BotaoIniciar.addActionListener(new java.awt.event.ActionListener() {
@@ -200,51 +200,224 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BotaoIniciar);
-        BotaoIniciar.setBounds(350, 360, 61, 23);
+        BotaoIniciar.setBounds(350, 360, 83, 29);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSomaActionPerformed
+    private void BotaoOutraCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoOutraCartaActionPerformed
         
         outracarta = true;
         
-        jTextField1Resultado.setText(String.valueOf(baralho[3]));
+        if (outracarta == true && cartasjogador < 5) {
+                    MaoJogador = mesa.nextInt(13) + 1;
+
+                    switch (MaoJogador) {
+                        case 1:
+                            MaoJogadorNumero = MaoJogadorNumero + 1;
+                            NaipeNumeroJogador = mesa.nextInt(3);
+                            cartasjogador = cartasjogador + 1;
+                            Naipe = NaipeFunction(NaipeNumeroJogador);
+                            //JOptionPane.showMessageDialog(null, "Você tirou um AS de Naipe " + Naipe);
+                            //JOptionPane.showMessageDialog(null, "Sua mão tem " + MaoJogadorNumero);
+                            baralho[contador] = MaoJogador + Naipe;
+                            contador = contador + 1;
+                            break;
+                        case 11:
+                            MaoJogadorNumero = MaoJogadorNumero + 10;
+                            cartasjogador = cartasjogador + 1;
+                            //JOptionPane.showMessageDialog(null, "Você tirou um Valete");
+                           // JOptionPane.showMessageDialog(null, "Sua mão tem " + MaoJogadorNumero);
+                            baralho[contador] = 10 + Naipe;
+                            contador = contador + 1;
+                            break;
+                        case 12:
+                            MaoJogadorNumero = MaoJogadorNumero + 10;
+                            cartasjogador = cartasjogador + 1;
+                            //JOptionPane.showMessageDialog(null, "Você tirou um Rei");
+                            //JOptionPane.showMessageDialog(null, "Sua mão tem " + MaoJogadorNumero);
+                            baralho[contador] = 10 + Naipe;
+                            contador = contador + 1;
+                            break;
+                        case 13:
+                            MaoJogadorNumero = MaoJogadorNumero + 10;
+                            cartasjogador = cartasjogador + 1;
+                            //JOptionPane.showMessageDialog(null, "Você tirou um Dama");
+                            //JOptionPane.showMessageDialog(null, "Sua mão tem " + MaoJogadorNumero);
+                            baralho[contador] = 10 + Naipe;
+                            contador = contador + 1;
+                            break;
+                        default:
+                            MaoJogadorNumero = MaoJogadorNumero + MaoJogador;
+                            cartasjogador = cartasjogador + 1;
+                            NaipeNumeroJogador = mesa.nextInt(3);
+                            NaipeNumeroMaquina = mesa.nextInt(3);
+                            baralho[contador] = MaoJogador + Naipe;
+                            contador = contador + 1;
+                            //JOptionPane.showMessageDialog(null, "você tirou a carta " + MaoJogador + " de Naipe " + Naipe);
+                            //JOptionPane.showMessageDialog(null, "Sua mão tem " + MaoJogadorNumero);
+                            break;
+                    }
+                    outracarta = false;
+                }
+        
+        Carta3.setText(String.valueOf(baralho[3]));
 
 
-    }//GEN-LAST:event_jButtonSomaActionPerformed
+    }//GEN-LAST:event_BotaoOutraCartaActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void PainelDeInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PainelDeInfoActionPerformed
 
-        jTextField3.setText(String.valueOf(Jogador1));
+        PainelDeInfo.setText(String.valueOf(Jogador1));
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_PainelDeInfoActionPerformed
 
-    private void jTextField1Valor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1Valor1ActionPerformed
+    private void Carta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carta1ActionPerformed
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1Valor1ActionPerformed
+    }//GEN-LAST:event_Carta1ActionPerformed
 
-    private void jTextField2Valor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2Valor2ActionPerformed
+    private void Carta2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carta2ActionPerformed
 
 // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2Valor2ActionPerformed
+    }//GEN-LAST:event_Carta2ActionPerformed
 
     private void BotaoIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoIniciarActionPerformed
 
-        iniciarjogo = true;
+        
+        if(iniciarjogo == true){
+         //CARTA 1
+            MaoJogador = mesa.nextInt(13) + 1;
+            NaipeNumeroJogador = mesa.nextInt(3);
+            NaipeNumeroMaquina = mesa.nextInt(3);
+            MaoMesa = mesa.nextInt(13) + 1;
+            switch (MaoJogador) {
+                case 1:
+                    MaoJogadorNumero = MaoJogadorNumero + 1;
+                    MaoMesaNumero = MaoMesaNumero + 1;
+                    NaipeNumeroJogador = mesa.nextInt(3);
+                    NaipeNumeroMaquina = mesa.nextInt(3);
+                    Naipe = NaipeFunction(NaipeNumeroJogador);
+                    //JOptionPane.showMessageDialog(null, "Sua primeira carta foi um AS de Naipe " + Naipe + ". Sua mão tem " + MaoJogadorNumero);
+                    baralho[contador] = MaoJogador + Naipe;
+                    contador = contador + 1;
+                    break;
+                case 11:
+                    MaoJogadorNumero = MaoJogadorNumero + 10;
+                    MaoMesaNumero = MaoMesaNumero + 10;
+                    NaipeNumeroJogador = mesa.nextInt(3);
+                    NaipeNumeroMaquina = mesa.nextInt(3);
+                    Naipe = NaipeFunction(NaipeNumeroJogador);
+                    //JOptionPane.showMessageDialog(null, "Sua primeira carta foi um Valete de " + Naipe + " . Sua mão tem " + MaoJogadorNumero);
+                    baralho[contador] = 10 + Naipe;
+                    contador = contador + 1;
+                    break;
+                case 12:
+                    MaoJogadorNumero = MaoJogadorNumero + 10;
+                    MaoMesaNumero = MaoMesaNumero + 10;
+                    NaipeNumeroJogador = mesa.nextInt(3);
+                    NaipeNumeroMaquina = mesa.nextInt(3);
+                    Naipe = NaipeFunction(NaipeNumeroJogador);
+                    //JOptionPane.showMessageDialog(null, "Sua primeira carta foi um Rei de " + Naipe + " . Sua mão tem " + MaoJogadorNumero);
+                    baralho[contador] = 10 + Naipe;
+                    contador = contador + 1;
+                    break;
+                case 13:
+                    MaoJogadorNumero = MaoJogadorNumero + 10;
+                    MaoMesaNumero = MaoMesaNumero + 10;
+                    NaipeNumeroJogador = mesa.nextInt(3);
+                    NaipeNumeroMaquina = mesa.nextInt(3);
+                    Naipe = NaipeFunction(NaipeNumeroJogador);
+                    //JOptionPane.showMessageDialog(null, "Sua primeira carta foi uma Dama de " + Naipe + " . Sua mão tem " + MaoJogadorNumero);
+                    baralho[contador] = 10 + Naipe;
+                    contador = contador + 1;
+                    break;
+                default:
+                    MaoJogadorNumero = MaoJogadorNumero + MaoJogador;
+                    MaoMesaNumero = MaoMesaNumero + MaoMesa;
+                    NaipeNumeroJogador = mesa.nextInt(3);
+                    NaipeNumeroMaquina = mesa.nextInt(3);
+                    Naipe = NaipeFunction(NaipeNumeroJogador);
+                    //JOptionPane.showMessageDialog(null, "Sua primeira carta foi um " + MaoJogador + " de Naipe " + Naipe + ". Sua mão tem " + MaoJogadorNumero);
+                    baralho[contador] = MaoJogador + Naipe;
+                    contador = contador + 1;
+                    break;
 
-        jTextField1Valor1.setText(String.valueOf(baralho[0]));
+            }
+            System.out.println("mesa tirou um " + MaoMesaNumero);
 
-        jTextField2Valor2.setText(String.valueOf(baralho[1]));
+            //CARTA 2
+            MaoJogador = mesa.nextInt(13) + 1;
+            NaipeNumeroJogador = mesa.nextInt(3);
+            NaipeNumeroMaquina = mesa.nextInt(3);
+            MaoMesa = mesa.nextInt(13) + 1;
+            switch (MaoJogador) {
+                case 1:
+                    MaoJogadorNumero = MaoJogadorNumero + 1;
+                    MaoMesaNumero = MaoMesaNumero + 1;
+                    NaipeNumeroJogador = mesa.nextInt(3);
+                    NaipeNumeroMaquina = mesa.nextInt(3);
+                    Naipe = NaipeFunction(NaipeNumeroJogador);
+                    //JOptionPane.showMessageDialog(null, "Sua segunda carta foi um AS de Naipe " + Naipe + ". Sua mão tem " + MaoJogadorNumero);
+                    baralho[contador] = MaoJogador + Naipe;
+                    contador = contador + 1;
+                    break;
+                case 11:
+                    MaoJogadorNumero = MaoJogadorNumero + 10;
+                    MaoMesaNumero = MaoMesaNumero + 10;
+                    NaipeNumeroJogador = mesa.nextInt(3);
+                    NaipeNumeroMaquina = mesa.nextInt(3);
+                    Naipe = NaipeFunction(NaipeNumeroJogador);
+                   // JOptionPane.showMessageDialog(null, "Sua segunda carta foi um Valete de " + Naipe + " . Sua mão tem " + MaoJogadorNumero);
+                    baralho[contador] = 10 + Naipe;
+                    contador = contador + 1;
+                    break;
+                case 12:
+                    MaoJogadorNumero = MaoJogadorNumero + 10;
+                    MaoMesaNumero = MaoMesaNumero + 10;
+                    NaipeNumeroJogador = mesa.nextInt(3);
+                    NaipeNumeroMaquina = mesa.nextInt(3);
+                    Naipe = NaipeFunction(NaipeNumeroJogador);
+                   // JOptionPane.showMessageDialog(null, "Sua segunda carta foi um Rei de " + Naipe + " . Sua mão tem " + MaoJogadorNumero);
+                    baralho[contador] = 10 + Naipe;
+                    contador = contador + 1;
+                    cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
+                    System.out.println("Carta valida igual a " + cartavalida);
+                    break;
+                case 13:
+                    MaoJogadorNumero = MaoJogadorNumero + 10;
+                    MaoMesaNumero = MaoMesaNumero + 10;
+                    NaipeNumeroJogador = mesa.nextInt(3);
+                    NaipeNumeroMaquina = mesa.nextInt(3);
+                    Naipe = NaipeFunction(NaipeNumeroJogador);
+                    //JOptionPane.showMessageDialog(null, "Sua segunda carta foi uma Dama de " + Naipe + " . Sua mão tem " + MaoJogadorNumero);
+                    baralho[contador] = 10 + Naipe;
+                    contador = contador + 1;
+                    break;
+                default:
+                    MaoJogadorNumero = MaoJogadorNumero + MaoJogador;
+                    MaoMesaNumero = MaoMesaNumero + MaoMesa;
+                    NaipeNumeroJogador = mesa.nextInt(3);
+                    NaipeNumeroMaquina = mesa.nextInt(3);
+                    Naipe = NaipeFunction(NaipeNumeroJogador);
+                    //JOptionPane.showMessageDialog(null, "Sua segunda carta foi um " + MaoJogador + " de Naipe " + Naipe + ". Sua mão tem " + MaoJogadorNumero);
+                    baralho[contador] = MaoJogador + Naipe;
+                    contador = contador + 1;
+                    break;
+            }
+        }
+        iniciarjogo = false;
+        Carta1.setText(String.valueOf(baralho[0]));
+
+        Carta2.setText(String.valueOf(baralho[1]));
 
         // TODO add your handling code here:
     }//GEN-LAST:event_BotaoIniciarActionPerformed
 
-    private void jTextField1ResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ResultadoActionPerformed
+    private void Carta3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carta3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ResultadoActionPerformed
+    }//GEN-LAST:event_Carta3ActionPerformed
 
     static int somatoria(int numero) {
         int resultado = 0;
@@ -269,125 +442,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Nome do Jogador inválido");
             }
 
-            //CARTA 1
-            MaoJogador = mesa.nextInt(13) + 1;
-            NaipeNumeroJogador = mesa.nextInt(3);
-            NaipeNumeroMaquina = mesa.nextInt(3);
-            MaoMesa = mesa.nextInt(13) + 1;
-            switch (MaoJogador) {
-                case 1:
-                    MaoJogadorNumero = MaoJogadorNumero + 1;
-                    MaoMesaNumero = MaoMesaNumero + 1;
-                    NaipeNumeroJogador = mesa.nextInt(3);
-                    NaipeNumeroMaquina = mesa.nextInt(3);
-                    Naipe = NaipeFunction(NaipeNumeroJogador);
-                    JOptionPane.showMessageDialog(null, "Sua primeira carta foi um AS de Naipe " + Naipe + ". Sua mão tem " + MaoJogadorNumero);
-                    baralho[contador] = MaoJogador + Naipe;
-                    contador = contador + 1;
-                    break;
-                case 11:
-                    MaoJogadorNumero = MaoJogadorNumero + 10;
-                    MaoMesaNumero = MaoMesaNumero + 10;
-                    NaipeNumeroJogador = mesa.nextInt(3);
-                    NaipeNumeroMaquina = mesa.nextInt(3);
-                    Naipe = NaipeFunction(NaipeNumeroJogador);
-                    JOptionPane.showMessageDialog(null, "Sua primeira carta foi um Valete de " + Naipe + " . Sua mão tem " + MaoJogadorNumero);
-                    baralho[contador] = 10 + Naipe;
-                    contador = contador + 1;
-                    break;
-                case 12:
-                    MaoJogadorNumero = MaoJogadorNumero + 10;
-                    MaoMesaNumero = MaoMesaNumero + 10;
-                    NaipeNumeroJogador = mesa.nextInt(3);
-                    NaipeNumeroMaquina = mesa.nextInt(3);
-                    Naipe = NaipeFunction(NaipeNumeroJogador);
-                    JOptionPane.showMessageDialog(null, "Sua primeira carta foi um Rei de " + Naipe + " . Sua mão tem " + MaoJogadorNumero);
-                    baralho[contador] = 10 + Naipe;
-                    contador = contador + 1;
-                    break;
-                case 13:
-                    MaoJogadorNumero = MaoJogadorNumero + 10;
-                    MaoMesaNumero = MaoMesaNumero + 10;
-                    NaipeNumeroJogador = mesa.nextInt(3);
-                    NaipeNumeroMaquina = mesa.nextInt(3);
-                    Naipe = NaipeFunction(NaipeNumeroJogador);
-                    JOptionPane.showMessageDialog(null, "Sua primeira carta foi uma Dama de " + Naipe + " . Sua mão tem " + MaoJogadorNumero);
-                    baralho[contador] = 10 + Naipe;
-                    contador = contador + 1;
-                    break;
-                default:
-                    MaoJogadorNumero = MaoJogadorNumero + MaoJogador;
-                    MaoMesaNumero = MaoMesaNumero + MaoMesa;
-                    NaipeNumeroJogador = mesa.nextInt(3);
-                    NaipeNumeroMaquina = mesa.nextInt(3);
-                    Naipe = NaipeFunction(NaipeNumeroJogador);
-                    JOptionPane.showMessageDialog(null, "Sua primeira carta foi um " + MaoJogador + " de Naipe " + Naipe + ". Sua mão tem " + MaoJogadorNumero);
-                    baralho[contador] = MaoJogador + Naipe;
-                    contador = contador + 1;
-                    break;
-
-            }
-            System.out.println("mesa tirou um " + MaoMesaNumero);
-
-            //CARTA 2
-            MaoJogador = mesa.nextInt(13) + 1;
-            NaipeNumeroJogador = mesa.nextInt(3);
-            NaipeNumeroMaquina = mesa.nextInt(3);
-            MaoMesa = mesa.nextInt(13) + 1;
-            switch (MaoJogador) {
-                case 1:
-                    MaoJogadorNumero = MaoJogadorNumero + 1;
-                    MaoMesaNumero = MaoMesaNumero + 1;
-                    NaipeNumeroJogador = mesa.nextInt(3);
-                    NaipeNumeroMaquina = mesa.nextInt(3);
-                    Naipe = NaipeFunction(NaipeNumeroJogador);
-                    JOptionPane.showMessageDialog(null, "Sua segunda carta foi um AS de Naipe " + Naipe + ". Sua mão tem " + MaoJogadorNumero);
-                    baralho[contador] = MaoJogador + Naipe;
-                    contador = contador + 1;
-                    break;
-                case 11:
-                    MaoJogadorNumero = MaoJogadorNumero + 10;
-                    MaoMesaNumero = MaoMesaNumero + 10;
-                    NaipeNumeroJogador = mesa.nextInt(3);
-                    NaipeNumeroMaquina = mesa.nextInt(3);
-                    Naipe = NaipeFunction(NaipeNumeroJogador);
-                    JOptionPane.showMessageDialog(null, "Sua segunda carta foi um Valete de " + Naipe + " . Sua mão tem " + MaoJogadorNumero);
-                    baralho[contador] = 10 + Naipe;
-                    contador = contador + 1;
-                    break;
-                case 12:
-                    MaoJogadorNumero = MaoJogadorNumero + 10;
-                    MaoMesaNumero = MaoMesaNumero + 10;
-                    NaipeNumeroJogador = mesa.nextInt(3);
-                    NaipeNumeroMaquina = mesa.nextInt(3);
-                    Naipe = NaipeFunction(NaipeNumeroJogador);
-                    JOptionPane.showMessageDialog(null, "Sua segunda carta foi um Rei de " + Naipe + " . Sua mão tem " + MaoJogadorNumero);
-                    baralho[contador] = 10 + Naipe;
-                    contador = contador + 1;
-                    cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
-                    System.out.println("Carta valida igual a " + cartavalida);
-                    break;
-                case 13:
-                    MaoJogadorNumero = MaoJogadorNumero + 10;
-                    MaoMesaNumero = MaoMesaNumero + 10;
-                    NaipeNumeroJogador = mesa.nextInt(3);
-                    NaipeNumeroMaquina = mesa.nextInt(3);
-                    Naipe = NaipeFunction(NaipeNumeroJogador);
-                    JOptionPane.showMessageDialog(null, "Sua segunda carta foi uma Dama de " + Naipe + " . Sua mão tem " + MaoJogadorNumero);
-                    baralho[contador] = 10 + Naipe;
-                    contador = contador + 1;
-                    break;
-                default:
-                    MaoJogadorNumero = MaoJogadorNumero + MaoJogador;
-                    MaoMesaNumero = MaoMesaNumero + MaoMesa;
-                    NaipeNumeroJogador = mesa.nextInt(3);
-                    NaipeNumeroMaquina = mesa.nextInt(3);
-                    Naipe = NaipeFunction(NaipeNumeroJogador);
-                    JOptionPane.showMessageDialog(null, "Sua segunda carta foi um " + MaoJogador + " de Naipe " + Naipe + ". Sua mão tem " + MaoJogadorNumero);
-                    baralho[contador] = MaoJogador + Naipe;
-                    contador = contador + 1;
-                    break;
-            }
+            
             System.out.println("mesa tirou um " + MaoMesaNumero);
 
             do {
@@ -440,57 +495,7 @@ public class TelaInicial extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "A maquina já tem 5 cartas e aguarda sua jogada");
                 }
 
-                if (outracarta == true && cartasjogador < 5) {
-                    MaoJogador = mesa.nextInt(13) + 1;
-
-                    switch (MaoJogador) {
-                        case 1:
-                            MaoJogadorNumero = MaoJogadorNumero + 1;
-                            NaipeNumeroJogador = mesa.nextInt(3);
-                            cartasjogador = cartasjogador + 1;
-                            Naipe = NaipeFunction(NaipeNumeroJogador);
-                            JOptionPane.showMessageDialog(null, "Você tirou um AS de Naipe " + Naipe);
-                            JOptionPane.showMessageDialog(null, "Sua mão tem " + MaoJogadorNumero);
-                            baralho[contador] = MaoJogador + Naipe;
-                            contador = contador + 1;
-                            break;
-                        case 11:
-                            MaoJogadorNumero = MaoJogadorNumero + 10;
-                            cartasjogador = cartasjogador + 1;
-                            JOptionPane.showMessageDialog(null, "Você tirou um Valete");
-                            JOptionPane.showMessageDialog(null, "Sua mão tem " + MaoJogadorNumero);
-                            baralho[contador] = 10 + Naipe;
-                            contador = contador + 1;
-                            break;
-                        case 12:
-                            MaoJogadorNumero = MaoJogadorNumero + 10;
-                            cartasjogador = cartasjogador + 1;
-                            JOptionPane.showMessageDialog(null, "Você tirou um Rei");
-                            JOptionPane.showMessageDialog(null, "Sua mão tem " + MaoJogadorNumero);
-                            baralho[contador] = 10 + Naipe;
-                            contador = contador + 1;
-                            break;
-                        case 13:
-                            MaoJogadorNumero = MaoJogadorNumero + 10;
-                            cartasjogador = cartasjogador + 1;
-                            JOptionPane.showMessageDialog(null, "Você tirou um Dama");
-                            JOptionPane.showMessageDialog(null, "Sua mão tem " + MaoJogadorNumero);
-                            baralho[contador] = 10 + Naipe;
-                            contador = contador + 1;
-                            break;
-                        default:
-                            MaoJogadorNumero = MaoJogadorNumero + MaoJogador;
-                            cartasjogador = cartasjogador + 1;
-                            NaipeNumeroJogador = mesa.nextInt(3);
-                            NaipeNumeroMaquina = mesa.nextInt(3);
-                            baralho[contador] = MaoJogador + Naipe;
-                            contador = contador + 1;
-                            JOptionPane.showMessageDialog(null, "você tirou a carta " + MaoJogador + " de Naipe " + Naipe);
-                            JOptionPane.showMessageDialog(null, "Sua mão tem " + MaoJogadorNumero);
-                            break;
-                    }
-
-                }
+                
                 if (cartasjogador == 5) {
                     JOptionPane.showMessageDialog(null, "Você já tem 5 cartas e precisa trucar");
                 }
@@ -580,19 +585,19 @@ public class TelaInicial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoIniciar;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButtonSoma;
+    private javax.swing.JButton BotaoOutraCarta;
+    private javax.swing.JButton BotaoPassar;
+    private javax.swing.JTextField Carta1;
+    private javax.swing.JTextField Carta2;
+    private javax.swing.JTextField Carta3;
+    private javax.swing.JTextField Carta4;
+    private javax.swing.JTextField Carta5;
+    private javax.swing.JTextField PainelDeInfo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel4Resultado;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField1Resultado;
-    private javax.swing.JTextField jTextField1Valor1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField2Valor2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
