@@ -23,8 +23,10 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+        rel="stylesheet">
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
@@ -34,61 +36,53 @@
 
 </head>
 
-<body id="page-top">
+<style>
+    .my-container:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+        background-image: url('img/dashbg.JPG');
+    }
+</style>
+
+<body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <div class="my-container" style='padding: 10%;'>
 
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">
-            <span class="d-block d-lg-none">Welcome to my page</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-    </nav>
-
-
-    <div class="container-fluid p-0">
-
-        <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-            <div class="my-auto">
-
-                <ul class="fa-ul mb-0">
+        <div class="card shadow col-md-5" style='margin-top: 10%;'>
+            <div class='card-body'>
+                <ul class="fa-ul mb-4">
                     <li>
                         <i class="fa-li fa fa-flag text-warning"></i>
-                        <strong> Choose the Language / Selecione o idioma</strong></li>
+                        <strong> Choose the Language</strong>
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-flag text-warning"></i>
+                        <strong> Selecione o idioma</strong>
+
+                    </li>
                 </ul>
-                <p></p>
-
-                <!-- Portugues -->
-                <li class="list-inline-item">
-                    <a href="Portuguese.html">
-                        <span class="fa-stack fa-lg">
-                            <!--i class="fa fa-circle fa-stack-2x"></i-->
-                            <i class="fa fa- fa-stack-1x fa-inverse"> <img src="img/br.png"> </i>
-                        </span>
-                    </a>
-                </li>
-
-                <p></p>
-
-                <!-- Ingles-->
-                <li class="list-inline-item">
-                    <a href="English.html">
-                        <span class="fa-stack fa-lg">
-                            <!--i class="fa fa-circle fa-stack-2x"></i-->
-                            <em class="fa fa- fa-stack-1x fa-inverse"> <img src="img/en.png"> </em>
-                        </span>
-                    </a>
-                </li>
-
+                <div class='col-md-12'>
+                    <div class='row'>
+                        <div class='col-md-6 mb-5'>
+                            <a href="Portuguese.html">
+                                <i class="fa fa- fa-stack-1x fa-inverse"> <img src="img/br.png"></i>
+                            </a>
+                        </div>
+                        <div class='col-md-6 mb-5'>
+                            <a href="English.html">
+                                <i class="fa fa- fa-stack-1x fa-inverse"> <img src="img/en.png"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-
-
-
+        </div>
     </div>
 
     <!-- Bootstrap core JavaScript -->
